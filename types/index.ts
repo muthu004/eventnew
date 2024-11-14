@@ -1,5 +1,6 @@
 
 // ====== USER PARAMS
+
 export type CreateUserParams = {
     clerkId: string
     firstName: string
@@ -145,7 +146,7 @@ export type CreateUserParams = {
   }
   
   export type SearchParamProps = {
-    params: Promise<{ id: string }>
+    params: { id: string }
     searchParams: { [key: string]: string | string[] | undefined }
-  };
+  }
   
