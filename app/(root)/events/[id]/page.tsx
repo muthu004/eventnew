@@ -2,8 +2,10 @@ import CheckoutButton from '@/components/shared/CheckoutButton';
 import Collection from '@/components/shared/Collection';
 import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions'
 import { formatDateTime } from '@/lib/utils';
-import { SearchParamProps } from '@/types'
+import { SearchParamProps } from '@/types';
 import Image from 'next/image';
+
+
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
@@ -12,8 +14,9 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
     categoryId: event.category._id,
     eventId: event._id,
     page: searchParams.page as string,
-  })
+  });
 
+  // ... rest of your component
   return (
     <>
     <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
@@ -97,4 +100,6 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
   )
 }
 
-export default EventDetails
+// Ensure this is exported as a Next.js page.
+export default EventDetails;
+
